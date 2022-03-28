@@ -2,14 +2,14 @@ import firebase from 'firebase';
 
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyDyZHOhA-axgQYoEwMjvalR78NV1aIrUbc",
-    authDomain: "chat-facf0.firebaseapp.com",
-    projectId: "chat-facf0",
-    storageBucket: "chat-facf0.appspot.com",
-    messagingSenderId: "784914485699",
-    appId: "1:784914485699:web:79b47b4a7e994ea720ed76",
-    measurementId: "G-M6RJBLFS30"
-  });
+    apiKey: "AIzaSyAw8TPVHYI1SppaoubIWgmFIqzZG-pWF7w",
+    authDomain: "mrpg-c78e5.firebaseapp.com",
+    projectId: "mrpg-c78e5",
+    storageBucket: "mrpg-c78e5.appspot.com",
+    messagingSenderId: "788028079134",
+    appId: "1:788028079134:web:d3843ebe0f883eb53f420f",
+    measurementId: "G-SFGJ6Z1588"
+});
 
   const db = firebaseApp.firestore()
 
