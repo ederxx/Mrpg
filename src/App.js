@@ -5,7 +5,6 @@ import { auth } from './firebase';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import 'firebase/auth';
 import 'firebase/firestore';
-import { useCollectionData} from 'react-firebase-hooks/firestore';
 
 
 function App() {
