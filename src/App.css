@@ -52,8 +52,20 @@ p {
     padding:10px;
     padding-bottom: 30px;
     background-color: #FAFAFA;
+  }
+    .sendRoll{
+      position: fixed;
 
-
+      width: 100%;
+      bottom: 0;
+      z-index: 1;
+      border-top: 1px solid lightgray;
+      margin-left: -5px;
+      padding:10px;
+      padding-bottom: 30px;
+      margin-left: 1190px;
+      margin-right: ;
+      background-color: #FAFAFA;
 
   }
 
@@ -72,7 +84,12 @@ p {
     margin: 4px 5% -13px 5%;
     max-width:  200px;
 
-  }
+  }  .buttonSendRoll {
+    width: 18%;
+    font-size: 15px;
+    font-weight: 550;
+    margin: 4px 5% -13px 5%;
+    max-width:  200px;}
 
   .msgs {
     margin:110px 0;
