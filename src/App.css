@@ -64,7 +64,7 @@ p {
       padding:10px;
       padding-bottom: 30px;
       margin-left: 1190px;
-      margin-right: ;
+      
       background-color: #FAFAFA;
 
   }
@@ -84,13 +84,23 @@ p {
     margin: 4px 5% -13px 5%;
     max-width:  200px;
 
-  }  .buttonSendRoll {
-    width: 18%;
+  }  .openModalBtn {
+    position: fixed;
+    width: 200px;
+    height:40px ;
+    border: none;
+    border-radius: 6px;
+    background-color: #395dff;
+    color: white;
+    cursor: pointer;
     font-size: 15px;
     font-weight: 550;
-    margin: 4px 5% -13px 5%;
-    max-width:  200px;}
+  
 
+    }
+    
+
+    
   .msgs {
     margin:110px 0;
     display: flex;

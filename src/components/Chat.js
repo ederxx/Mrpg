@@ -4,6 +4,7 @@ import SendMessage from './SendMessage';
 import SignOut from './SignOut.js';
 import SendRoll from './SendRoll';
 
+
 function Chat() {
     const scroll = useRef()
     const [messages, setMessages] = useState([])
@@ -29,6 +30,7 @@ function Chat() {
                 </div>
                     <SendMessage scroll={scroll}  />
                     <SendRoll  />
+               
                     <div ref={scroll}></div>
            
                     </div>
