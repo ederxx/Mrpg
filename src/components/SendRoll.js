@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {db, auth} from '../firebase';
 import firebase from 'firebase';
-import { Input, Button} from '@material-ui/core';
+import { Button} from '@material-ui/core';
 function SendRoll ({scroll}) {
     const[msg, setMsg] = useState(' ')
 
