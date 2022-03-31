@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {db, auth} from '../firebase';
-import firebase from 'firebase';
+
 import { Button} from '@material-ui/core';
 import Modal from '../components/modal'
 
