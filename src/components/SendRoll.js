@@ -2,11 +2,11 @@ import React, {useState} from 'react';
 import {db, auth} from '../firebase';
 import firebase from 'firebase';
 import { Button} from '@material-ui/core';
-import Modal from '../components/modal'
+
 
 
 function SendRoll ({scroll}) {
-    const [ openModal, setOpenModal] = useState(false);
+
     const[msg, setMsg] = useState(' ')
 
     async function SendRoll(e) {
@@ -26,17 +26,17 @@ function SendRoll ({scroll}) {
 
     
     }
-     return (
-         <div>
-             <form onSubmit={SendRoll}>
-                 
-                <div className="sendRoll">
-                 <Button className="openModalBtn" onClick={()=>{setOpenModal(true);}} type="submit">Rolar</Button>
-                 {openModal && <Modal  closeModal ={setOpenModal} /> }
-                </div>
-             </form>
-        </div>
-     )
+    return (
+        <div>
+            <form onSubmit={SendRoll}>
+                
+               <div className="sendRoll">
+                <Button className="sendRoll" type="submit">Rolar</Button>
+            
+               </div>
+            </form>
+       </div>
+    )
 
 
 }

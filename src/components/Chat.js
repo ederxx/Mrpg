@@ -2,7 +2,9 @@ import React, { useState, useEffect, useRef} from 'react';
 import {db, auth} from '../firebase';
 import SendMessage from './SendMessage';
 import SignOut from './SignOut.js';
-import SendRoll from './SendRoll';
+
+import ButtonModal from './ButtonModal';
+
 
 
 function Chat() {
@@ -28,8 +30,11 @@ function Chat() {
                     </div>
                 ))}
                 </div>
+           
                     <SendMessage scroll={scroll}  />
-                    <SendRoll  />
+                    <ButtonModal   />
+               
+              
                
                     <div ref={scroll}></div>
            

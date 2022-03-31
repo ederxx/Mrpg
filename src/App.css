@@ -54,18 +54,17 @@ p {
     background-color: #FAFAFA;
   }
     .sendRoll{
-      position: fixed;
-
-      width: 100%;
+      position:fixed;
+      
+      width: 0px;
       bottom: 0;
       z-index: 1;
       border-top: 1px solid lightgray;
       margin-left: -5px;
       padding:10px;
       padding-bottom: 30px;
-      margin-left: 1190px;
-      
-      background-color: #FAFAFA;
+      margin-left: 1220px;
+      background-color: #24060600;
 
   }
 
@@ -84,17 +83,7 @@ p {
     margin: 4px 5% -13px 5%;
     max-width:  200px;
 
-  }  .openModalBtn {
-    position: fixed;
-    width: 200px;
-    height:40px ;
-    border: none;
-    border-radius: 6px;
-    background-color: #395dff;
-    color: white;
-    cursor: pointer;
-    font-size: 15px;
-    font-weight: 550;
+
   
 
     }
