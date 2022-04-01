@@ -3,17 +3,20 @@ import {db, auth} from '../firebase';
 import SendMessage from './SendMessage';
 import SignOut from './SignOut.js';
 import SendRoll from './SendRoll';
-import ButtonModal from './ButtonModal';
-
 
 
 function Chat() {
-    const scroll = useRef()
+
+        const scroll = useRef()
     const [messages, setMessages] = useState([])
-    useEffect(() => {
+       useEffect(() => {
         db.collection('messages').orderBy('createdAt').limit(1000).onSnapshot (snapshot => {
             setMessages(snapshot.docs.map(doc => doc.data()))
-        })
+         
+       
+           
+             
+           })
     
 }, [])
 
@@ -29,11 +32,12 @@ function Chat() {
                     </div>
                     </div>
                 ))}
+               
                 </div>
            
-                    <SendMessage scroll={scroll}  />
-                    <SendRoll  />
-               
+                    <SendMessage  scroll={scroll} />
+                    <SendRoll scroll={scroll}  />
+                
               
                
                     <div ref={scroll}></div>
