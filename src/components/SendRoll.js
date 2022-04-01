@@ -5,37 +5,52 @@ import { Button} from '@material-ui/core';
 
 
 
-function SendRoll ({scroll}) {
 
-    const[msg, setMsg] = useState(' ')
+function SendRoll(){
 
+    const [msg, setMsg] = useState(' ')
     async function SendRoll(e) {
         e.preventDefault()
-        const { uid, photoURL} = auth.currentUser
-
+        console.log(e)
+        const { uid, photoURL } = auth.currentUser
+        setMsg(Math.floor(Math.random() * SendRoll + 1))
         await db.collection('messages').add({
+            
             text: msg,
             photoURL,
             uid,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
 
         })
-        setMsg( Math.floor(Math.random() * 6+1))
-        scroll.current.scrollIntoView({ behavior: 'smooth' })
+       
+  
+        //scroll.current.scrollIntoView({ behavior: 'smooth' })
 
 
-    
+
+
     }
     return (
         <div>
-            <form onSubmit={SendRoll}>
+                  <form onSubmit={SendRoll}>
+
+                <div className="sendRoll">
+                <button onClick={() => SendRoll()} id='cancelBtn'> Rolar </button>
+                    <select name="Dados" onChange={e => SendRoll(e.target.value)} id="dados">
+                        <option value="4">D4</option>
+                        <option value="6">D6</option>
+                        <option value="8">D8</option>
+                        <option value="10">D10</option>
+                        <option value="12">D12</option>
+                        <option value="20">D20</option>
+                        <option value="100">D100</option>
+
+                    </select>
                 
-               <div className="sendRoll">
-                <Button className="sendRoll" type="submit">Rolar</Button>
-            
-               </div>
+
+                </div>
             </form>
-       </div>
+        </div>
     )
 
 
