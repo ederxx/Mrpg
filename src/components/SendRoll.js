@@ -2,18 +2,12 @@ import React, {useState} from 'react';
 import {db, auth} from '../firebase';
 import firebase from 'firebase';
 
-
-
-
-
 function SendRoll(scroll){
-
     const [msg, setMsg] = useState(' ')
     async function SendRoll(e) {
         e.preventDefault()
         console.log(e)
         const { uid, photoURL } = auth.currentUser
-    g
         setMsg(' ')
         await db.collection('messages').add({
             
