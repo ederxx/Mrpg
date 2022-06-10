@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {db, auth} from '../firebase';
 import firebase from 'firebase';
-import { Button} from '@material-ui/core';
+
 
 
 
@@ -13,7 +13,7 @@ function SendRoll(scroll){
         e.preventDefault()
         console.log(e)
         const { uid, photoURL } = auth.currentUser
-        let x = e;
+    g
         setMsg(' ')
         await db.collection('messages').add({
             
