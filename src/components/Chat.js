@@ -3,8 +3,6 @@ import {db, auth} from '../firebase';
 import SendMessage from './SendMessage';
 import SignOut from './SignOut.js';
 import SendRoll from './SendRoll';
-import ButtonModal from './ButtonModal';
-import Modal from './modal';
 
 
 function Chat() {

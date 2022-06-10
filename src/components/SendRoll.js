@@ -1,30 +1,32 @@
 import React, {useState} from 'react';
 import {db, auth} from '../firebase';
 import firebase from 'firebase';
+import { Button} from '@material-ui/core';
 
 
 
 
+function SendRoll(scroll){
 
-function SendRoll({scroll}){
-
-    const [dado, setDado] = useState( )
-    async function SendRoll(ex) {
-        ex.preventDefault()
-        console.log(dado)
+    const [msg, setMsg] = useState(' ')
+    async function SendRoll(e) {
+        e.preventDefault()
+        console.log(e)
         const { uid, photoURL } = auth.currentUser
-  
-
-        await db.collection('dados').add({
+        let x = e;
+        setMsg(' ')
+        await db.collection('messages').add({
             
-           dados: dado,
+            text: msg,
             photoURL,
             uid,
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
 
         })
-        setDado(`Rolou um D${dado} e tirou  ` + Math.floor(Math.random() * dado + 1))
+        setMsg('')
         scroll.current.scrollIntoView({ behavior: 'smooth' })
+  
+        //scroll.current.scrollIntoView({ behavior: 'smooth' })
 
 
 
@@ -35,16 +37,15 @@ function SendRoll({scroll}){
                   <form onSubmit={SendRoll}>
 
                 <div className="sendRoll">
-                <button onClick={() => SendRoll()} type="submit" id='cancelBtn'> Rolar </button>
-                    <select name="Dados" onChange={ex => setDado(ex.target.value)} id="dados">
-                        <option value ="4">D4</option>
+                <button onClick={() => SendRoll()} id='cancelBtn'> Rolar </button>
+                    <select name="Dados" onChange={e => setMsg(Math.floor(Math.random() * e.target.value))} id="dados">
+                        <option value="4">D4</option>
                         <option value="6">D6</option>
                         <option value="8">D8</option>
                         <option value="10">D10</option>
                         <option value="12">D12</option>
                         <option value="20">D20</option>
                         <option value="100">D100</option>
-                       
 
                     </select>
                 
