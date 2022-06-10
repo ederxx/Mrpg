@@ -6,14 +6,15 @@ import { Button} from '@material-ui/core';
 
 
 
-function SendRoll(){
+function SendRoll(scroll){
 
     const [msg, setMsg] = useState(' ')
     async function SendRoll(e) {
         e.preventDefault()
         console.log(e)
         const { uid, photoURL } = auth.currentUser
-        setMsg(Math.floor(Math.random() * SendRoll + 1))
+        let x = e;
+        setMsg(' ')
         await db.collection('messages').add({
             
             text: msg,
@@ -22,7 +23,8 @@ function SendRoll(){
             createdAt: firebase.firestore.FieldValue.serverTimestamp()
 
         })
-       
+        setMsg('')
+        scroll.current.scrollIntoView({ behavior: 'smooth' })
   
         //scroll.current.scrollIntoView({ behavior: 'smooth' })
 
@@ -36,7 +38,7 @@ function SendRoll(){
 
                 <div className="sendRoll">
                 <button onClick={() => SendRoll()} id='cancelBtn'> Rolar </button>
-                    <select name="Dados" onChange={e => SendRoll(e.target.value)} id="dados">
+                    <select name="Dados" onChange={e => setMsg(Math.floor(Math.random() * e.target.value))} id="dados">
                         <option value="4">D4</option>
                         <option value="6">D6</option>
                         <option value="8">D8</option>

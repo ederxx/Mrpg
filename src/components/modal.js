@@ -1,11 +1,12 @@
 import './modal.css'
 import React, { useState } from 'react';
-import { Button } from '@material-ui/core';
 import { db, auth } from '../firebase';
 import firebase from 'firebase';
 
 
-function Modal({ closeModal, SendRoll }) {
+
+function Modal({ closeModal}) {
+  
     return (
 
         <div className="modalBackground">
@@ -15,12 +16,10 @@ function Modal({ closeModal, SendRoll }) {
                 <div className='title'>
                     <h1>Escolha o Dado</h1>
                 </div>
-
-                <div className='body'>
-
-                    <button onClick={() => SendRoll()} id='cancelBtn'> Rolar </button>
-                    <select name="Dados" onChange={e => SendRoll(e.target.value)} id="dados">
-                        <option value="4">D4z</option>
+                        <div className='body'>
+         
+                    <select name="Dados" onChange={e => alert(e.target.value)} id="dados">
+                        <option value="4">D4</option>
                         <option value="6">D6</option>
                         <option value="8">D8</option>
                         <option value="10">D10</option>
@@ -40,39 +39,7 @@ function Modal({ closeModal, SendRoll }) {
 
 
 
-    }
-function SendRoll(dado) {
-
-    const [msg, setMsg] = useState(' ')
-    setMsg(Math.floor(Math.random() * dado + 1))
-    async function SendRoll(e) {
-        e.preventDefault()
-        const { uid, photoURL } = auth.currentUser
-
-        await db.collection('messages').add({
-            text: msg,
-            photoURL,
-            uid,
-            createdAt: firebase.firestore.FieldValue.serverTimestamp()
-
-        })
-
-       // scroll.current.scrollIntoView({ behavior: 'smooth' })
-
-
-
-    }
-    return (
-        <div>
-            <form >
-
-                <div className="sendRoll">
-                    <Button className="sendRoll" onClick={() => SendRoll()} type="button">Rolar</Button>
-
-                </div>
-            </form>
-        </div>
-    )
+    
 
 
 

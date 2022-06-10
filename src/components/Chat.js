@@ -4,7 +4,7 @@ import SendMessage from './SendMessage';
 import SignOut from './SignOut.js';
 import SendRoll from './SendRoll';
 import ButtonModal from './ButtonModal';
-
+import Modal from './modal';
 
 
 function Chat() {
@@ -32,7 +32,8 @@ function Chat() {
                 </div>
            
                     <SendMessage scroll={scroll}  />
-                    <SendRoll  />
+                    <SendRoll />
+                
                
               
                
