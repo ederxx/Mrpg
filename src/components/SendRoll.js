@@ -32,7 +32,7 @@ function SendRoll(scroll){
 
                 <div className="sendRoll">
                 <button onClick={() => SendRoll()} id='cancelBtn'> Rolar </button>
-                    <select name="Dados" onChange={e => setMsg(Math.floor(Math.random() * e.target.value))} id="dados">
+                <select name="Dados" onChange={e => setMsg("o resultado da rolagem de um D" + e.target.value + " " + "=" + " " + Math.floor(Math.random() * e.target.value))+1} id="dados">
                         <option value="4">D4</option>
                         <option value="6">D6</option>
                         <option value="8">D8</option>
